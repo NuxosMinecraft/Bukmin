@@ -1,0 +1,13 @@
+===== Generate an entity =====
+Use php app/console generate:doctrine:entity to generate an entity
+Choose "annotation" as a configuration format.
+Say "yes" to "Do you want to generate an empty repository class [no]?".
+
+Use php app/console generate:doctrine:crud to automagically generate the controller, view files and forms.
+Say "yes" to "Do you want to generate the "write" actions [no]?".
+Choose "yml" as a configuration format.
+Say "yes" to "Confirm automatic update of the Routing [yes]?".
+
+===== Indentation =====
+Always use 2 spaces to indent.
+Use 4 spaces for YAML files.
