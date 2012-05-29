@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use Bukmin\PanelBundle\Entity\Player;
 use Bukmin\PanelBundle\Form\PlayerType;
+use JMS\SecurityExtraBundle\Annotation\Secure;
 
 /**
  * Player controller.
