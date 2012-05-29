@@ -1,0 +1,30 @@
+player:
+    pattern:  /
+    defaults: { _controller: "BukminPanelBundle:Player:index" }
+
+player_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BukminPanelBundle:Player:show" }
+
+player_new:
+    pattern:  /new
+    defaults: { _controller: "BukminPanelBundle:Player:new" }
+
+player_create:
+    pattern:  /create
+    defaults: { _controller: "BukminPanelBundle:Player:create" }
+    requirements: { _method: post }
+
+player_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BukminPanelBundle:Player:edit" }
+
+player_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BukminPanelBundle:Player:update" }
+    requirements: { _method: post }
+
+player_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BukminPanelBundle:Player:delete" }
+    requirements: { _method: post }

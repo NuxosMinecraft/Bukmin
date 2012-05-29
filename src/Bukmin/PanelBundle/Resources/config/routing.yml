@@ -1,3 +1,6 @@
 BukminPanelBundle_homepage:
-    pattern:  /hello/{name}
+    pattern:  /
     defaults: { _controller: BukminPanelBundle:Default:index }
+BukminPanelBundle_player:
+    resource: "@BukminPanelBundle/Resources/config/routing/player.yml"
+    prefix:   /player
