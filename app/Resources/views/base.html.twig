@@ -49,7 +49,7 @@
             <li {% if getControllerName() == 'ban' %}class="active"{% endif %}><a href="{{ path('ban') }}">{{ 'menu.bans'|trans }}</a></li>
             <li><a href="#plugins">{{ 'menu.plugins'|trans }}</a></li>
             <li><a href="#worlds">{{ 'menu.worlds'|trans }}</a></li>
-            <li><a href="#server">{{ 'menu.sever'|trans }}</a></li>
+            <li><a href="#server">{{ 'menu.server'|trans }}</a></li>
             <li {% if getControllerName() == 'security' %}class="active"{% endif %}>
               {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <a href="{{ path('fos_user_security_logout') }}">{{ app.user.username }} - {{ 'menu.logout'|trans }}</a>
