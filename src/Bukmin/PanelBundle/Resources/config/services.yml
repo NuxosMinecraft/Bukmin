@@ -5,3 +5,11 @@ services:
 #    bukmin_panel.example:
 #        class: %bukmin_panel.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    request:
+        class:        Symfony\Component\HttpFoundation\Reques
+
+    acme.twig.extension:
+        class: Bukmin\PanelBundle\Service\BukminTwigExtension
+        arguments:  [@request]
+        tags:
+            - { name: 'twig.extension' }
