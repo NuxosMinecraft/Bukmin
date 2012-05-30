@@ -46,6 +46,7 @@
           <ul class="nav">
             <li {% if getControllerName() == 'default' %}class="active"{% endif %}><a href="{{ path('BukminPanelBundle_homepage') }}">{{ 'menu.dashboard'|trans }}</a></li>
             <li {% if getControllerName() == 'player' %}class="active"{% endif %}><a href="{{ path('player') }}">{{ 'menu.players'|trans }}</a></li>
+            <li {% if getControllerName() == 'ban' %}class="active"{% endif %}><a href="{{ path('ban') }}">{{ 'menu.bans'|trans }}</a></li>
             <li><a href="#plugins">{{ 'menu.plugins'|trans }}</a></li>
             <li><a href="#worlds">{{ 'menu.worlds'|trans }}</a></li>
             <li><a href="#server">{{ 'menu.sever'|trans }}</a></li>

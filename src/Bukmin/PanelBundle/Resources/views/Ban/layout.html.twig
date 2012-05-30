@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}
+  {{ 'title.bans'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+  <div class="container">
+    {% block bukminpanel_body %}
+    {% endblock %}
+  </div>
+{% endblock %}

@@ -4,3 +4,6 @@ BukminPanelBundle_homepage:
 BukminPanelBundle_player:
     resource: "@BukminPanelBundle/Resources/config/routing/player.yml"
     prefix:   /player
+BukminPanelBundle_ban:
+    resource: "@BukminPanelBundle/Resources/config/routing/ban.yml"
+    prefix:   /ban

@@ -1,0 +1,30 @@
+ban:
+    pattern:  /
+    defaults: { _controller: "BukminPanelBundle:Ban:index" }
+
+ban_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BukminPanelBundle:Ban:show" }
+
+ban_new:
+    pattern:  /new
+    defaults: { _controller: "BukminPanelBundle:Ban:new" }
+
+ban_create:
+    pattern:  /create
+    defaults: { _controller: "BukminPanelBundle:Ban:create" }
+    requirements: { _method: post }
+
+ban_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "BukminPanelBundle:Ban:edit" }
+
+ban_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "BukminPanelBundle:Ban:update" }
+    requirements: { _method: post }
+
+ban_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "BukminPanelBundle:Ban:delete" }
+    requirements: { _method: post }

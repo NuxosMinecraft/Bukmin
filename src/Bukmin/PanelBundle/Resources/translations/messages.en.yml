@@ -1,6 +1,7 @@
 menu:
     dashboard: DashBoard
     players: Players
+    bans: Bans
     plugins: Plugins
     worlds: Worlds
     server: Server
@@ -9,4 +10,5 @@ menu:
 title:
     dashboard: DashBoard
     players: Players
+    bans: Bans
     account: Account

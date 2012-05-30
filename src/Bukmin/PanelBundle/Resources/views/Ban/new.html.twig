@@ -1,0 +1,20 @@
+{% extends "BukminPanelBundle:Ban:layout.html.twig" %}
+
+{% block bukminpanel_body %}
+  <h1>Ban creation</h1>
+
+  <form action="{{ path('ban_create') }}" method="post" {{ form_enctype(form) }}>
+      {{ form_widget(form) }}
+      <p>
+          <button type="submit">Create</button>
+      </p>
+  </form>
+
+  <ul class="record_actions">
+      <li>
+          <a href="{{ path('ban') }}">
+              Back to the list
+          </a>
+      </li>
+  </ul>
+{% endblock %}
