@@ -7,8 +7,12 @@ menu:
     users: Users
     logout: Logout
     login: Login
+
 title:
     dashboard: DashBoard
     players: Players
     bans: Bans
     account: Account
+
+security:
+    password_lost: Password lost?
