@@ -1,6 +1,6 @@
-user:
-    pattern:  /user
-    defaults: { _controller: BukminUserBundle:User:index }
+BukminUserBundle_user:
+    resource: "@BukminUserBundle/Resources/config/routing/user.yml"
+    prefix:   /user
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

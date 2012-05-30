@@ -1,0 +1,38 @@
+{% extends "BukminUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+  <h1>User list</h1>
+
+  <table class="records_list">
+      <thead>
+          <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Enabled</th>
+              <th>Lastlogin</th>
+              <th>Roles</th>
+              <th>Id</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+      {% for entity in entities %}
+          <tr>
+              <td><a href="{{ path('user_show', { 'id': entity.id }) }}">{{ entity.username }}</a></td>
+              <td>{{ entity.email }}</td>
+              <td>{{ entity.enabled }}</td>
+              <td>{% if entity.lastLogin %}{{ entity.lastLogin|date('Y-m-d H:i:s') }}{% endif %}</td>
+              <td>{% for role in entity.roles %}{{ role }}{% endfor %}</td>
+              <td>{{ entity.id }}</td>
+              <td>
+                  <ul>
+                      <li>
+                          <a href="{{ path('user_show', { 'id': entity.id }) }}">show</a>
+                      </li>
+                  </ul>
+              </td>
+          </tr>
+      {% endfor %}
+      </tbody>
+  </table>
+{% endblock %}

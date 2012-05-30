@@ -1,0 +1,10 @@
+user:
+    pattern:  /
+    defaults: { _controller: "BukminUserBundle:User:index" }
+
+user_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "BukminUserBundle:User:show" }
+
+
+
