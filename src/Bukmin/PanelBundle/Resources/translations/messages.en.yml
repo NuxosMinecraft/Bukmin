@@ -1,5 +1,4 @@
 menu:
-    dashboard: DashBoard
     players: Players
     bans: Bans
     plugins: Plugins
