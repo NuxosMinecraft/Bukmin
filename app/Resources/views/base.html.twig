@@ -50,11 +50,12 @@
             <li><a href="#plugins">{{ 'menu.plugins'|trans }}</a></li>
             <li><a href="#worlds">{{ 'menu.worlds'|trans }}</a></li>
             <li><a href="#server">{{ 'menu.server'|trans }}</a></li>
+            <li {% if getControllerName() == 'user' %}class="active"{% endif %}><a href="{{ path('user') }}">{{ 'menu.users'|trans }}</a></li>
             <li {% if getControllerName() == 'security' %}class="active"{% endif %}>
               {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 <a href="{{ path('fos_user_security_logout') }}">{{ app.user.username }} - {{ 'menu.logout'|trans }}</a>
               {% else %}
-                <a href="{{ path('fos_user_security_login') }}">{{ 'menu.login'|trans }}n</a>
+                <a href="{{ path('fos_user_security_login') }}">{{ 'menu.login'|trans }}</a>
               {% endif %}
             </li>
           </ul>

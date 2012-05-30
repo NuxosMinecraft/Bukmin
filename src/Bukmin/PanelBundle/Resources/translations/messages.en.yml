@@ -5,6 +5,7 @@ menu:
     plugins: Plugins
     worlds: Worlds
     server: Server
+    users: Users
     logout: Logout
     login: Login
 title:
