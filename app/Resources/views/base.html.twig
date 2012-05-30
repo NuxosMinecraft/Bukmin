@@ -44,16 +44,16 @@
         <a class="brand" href="#">BukAdmin</a>
         <div class="nav-collapse collapse" style="height: 0px; ">
           <ul class="nav">
-            <li {% if getControllerName() == 'default' %}class="active"{% endif %}><a href="{{ path('BukminPanelBundle_homepage') }}">DashBoard</a></li>
-            <li {% if getControllerName() == 'player' %}class="active"{% endif %}><a href="{{ path('player') }}">Players</a></li>
-            <li><a href="#plugins">Plugins</a></li>
-            <li><a href="#worlds">Worlds</a></li>
-            <li><a href="#server">Server</a></li>
+            <li {% if getControllerName() == 'default' %}class="active"{% endif %}><a href="{{ path('BukminPanelBundle_homepage') }}">{{ 'menu.dashboard'|trans }}</a></li>
+            <li {% if getControllerName() == 'player' %}class="active"{% endif %}><a href="{{ path('player') }}">{{ 'menu.players'|trans }}</a></li>
+            <li><a href="#plugins">{{ 'menu.plugins'|trans }}</a></li>
+            <li><a href="#worlds">{{ 'menu.worlds'|trans }}</a></li>
+            <li><a href="#server">{{ 'menu.sever'|trans }}</a></li>
             <li {% if getControllerName() == 'security' %}class="active"{% endif %}>
               {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <a href="{{ path('fos_user_security_logout') }}">{{ app.user.username }} - Logout</a>
+                <a href="{{ path('fos_user_security_logout') }}">{{ app.user.username }} - {{ 'menu.logout'|trans }}</a>
               {% else %}
-                <a href="{{ path('fos_user_security_login') }}">Login</a>
+                <a href="{{ path('fos_user_security_login') }}">{{ 'menu.login'|trans }}n</a>
               {% endif %}
             </li>
           </ul>

@@ -1,0 +1,12 @@
+menu:
+    dashboard: DashBoard
+    players: Players
+    plugins: Plugins
+    worlds: Worlds
+    server: Server
+    logout: Logout
+    login: Login
+title:
+    dashboard: DashBoard
+    players: Players
+    account: Account
