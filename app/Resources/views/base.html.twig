@@ -39,6 +39,7 @@
         </a>
         <a class="brand" href="{{ path('BukminPanelBundle_homepage') }}">BukAdmin</a>
         <div class="nav-collapse collapse" style="height: 0px; ">
+          {% if is_granted("IS_AUTHENTICATED_FULLY") %}
           <ul class="nav">
             <li class="{{ getControllerName() == 'player' ? 'active' : '' }}"><a href="{{ path('player') }}">{{ 'menu.players'|trans }}</a></li>
             <li class="divider-vertical"></li>
@@ -53,10 +54,11 @@
             <li class="{{ getControllerName() == 'user' ? 'active' : '' }}"><a href="{{ path('user') }}">{{ 'menu.users'|trans }}</a></li>
             <li class="divider-vertical"></li>
           </ul>
+          {% endif %}
 		  
           <ul class="pull-right nav">
             <li class="divider-vertical"></li>
-            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+            {% if is_granted("IS_AUTHENTICATED_FULLY") %}
               <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">{{ app.user.username }}</a></li>
               <li class="{{ getControllerName() == 'security' ? 'active' : '' }}" >
                 <a href="{{ path('fos_user_security_logout') }}">{{ 'menu.logout'|trans }}</a>
