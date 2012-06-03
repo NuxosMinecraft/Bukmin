@@ -27,7 +27,7 @@ Then, install the dependencies:
 Create the database and the tables:
 
     ./app/console doctrine:database:create
-    ./app/console doctrine:dchema:update --dump-sql # Check what will be changed
+    ./app/console doctrine:schema:update --dump-sql # Check what will be changed
     ./app/console doctrine:schema:update --force
 
 Update
@@ -38,7 +38,7 @@ Git pull:
     
 Check if there is SQl updates:
 
-    ./app/console doctrine:dchema:update --dump-sql # Check what will be changed
+    ./app/console doctrine:schema:update --dump-sql # Check what will be changed
     ./app/console doctrine:schema:update --force
     
 Clean the cache
