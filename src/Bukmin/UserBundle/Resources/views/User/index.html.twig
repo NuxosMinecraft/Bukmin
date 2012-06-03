@@ -3,7 +3,7 @@
 {% block fos_user_content %}
   <h1>User list</h1>
 
-  <table class="records_list">
+  <table class="records_list table table-striped table-condensed">
       <thead>
           <tr>
               <th>Username</th>
@@ -24,13 +24,10 @@
               <td>{% if entity.lastLogin %}{{ entity.lastLogin|date('Y-m-d H:i:s') }}{% endif %}</td>
               <td>{% for role in entity.roles %}{{ role }}{% endfor %}</td>
               <td>{{ entity.id }}</td>
-              <td>
-                  <ul>
-                      <li>
-                          <a href="{{ path('user_show', { 'id': entity.id }) }}">show</a>
-                      </li>
-                  </ul>
-              </td>
+			  <td>
+				  <a class="btn btn-mini btn-success" href="{{ path('user_show', { 'id': entity.id }) }}">show</a>
+				  <a class="btn btn-mini btn-warning" href="{{ path('user_show', { 'id': entity.id }) }}">edit</a>
+			  </td>
           </tr>
       {% endfor %}
       </tbody>

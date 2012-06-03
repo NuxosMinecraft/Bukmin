@@ -3,7 +3,7 @@
 {% block bukminpanel_body %}
   <h1>Player list</h1>
 
-  <table class="records_list">
+  <table class="records_list table table-striped table-condensed">
       <thead>
 	  <tr>
 	      <th>Id</th>
@@ -20,16 +20,10 @@
 	      <td>{{ entity.login }}</td>
 	      <td>{{ entity.email }}</td>
 	      <td>{{ entity.name }}</td>
-	      <td>
-		  <ul>
-		      <li>
-			  <a href="{{ path('player_show', { 'id': entity.id }) }}">show</a>
-		      </li>
-		      <li>
-			  <a href="{{ path('player_edit', { 'id': entity.id }) }}">edit</a>
-		      </li>
-		  </ul>
-	      </td>
+		  <td>
+			  <a class="btn btn-mini btn-success" href="{{ path('player_show', { 'id': entity.id }) }}">show</a>
+			  <a class="btn btn-mini btn-warning" href="{{ path('player_edit', { 'id': entity.id }) }}">edit</a>
+		  </td>
 	  </tr>
       {% endfor %}
       </tbody>

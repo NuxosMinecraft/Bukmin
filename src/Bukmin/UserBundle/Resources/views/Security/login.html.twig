@@ -5,7 +5,7 @@
     <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
 {% endif %}
 
-<form action="{{ path("fos_user_security_check") }}" method="post">
+<form class="well" action="{{ path("fos_user_security_check") }}" method="post">
     <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 
     <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
@@ -14,11 +14,12 @@
     <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
     <input type="password" id="password" name="_password" />
 
-    <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
-    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+	<label class="checkbox">
+		<input type="checkbox" id="remember_me" name="_remember_me" value="on" /> {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
+	</label>
 
-    <input type="submit" id="_submit" name="_submit" value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" />
+    <button class="btn btn-primary" type="submit" id="_submit" name="_submit">{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}</button>
+	<a class="btn btn-info" href="{{ path('fos_user_resetting_request') }}">{{ 'security.password_lost'|trans }}</a>
 </form>
 
-<a href="{{ path('fos_user_resetting_request') }}">{{ 'security.password_lost'|trans }}</a>
 {% endblock fos_user_content %}
