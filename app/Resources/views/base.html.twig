@@ -44,20 +44,34 @@
         <a class="brand" href="{{ path('BukminPanelBundle_homepage') }}">BukAdmin</a>
         <div class="nav-collapse collapse" style="height: 0px; ">
           <ul class="nav">
-            <li {% if getControllerName() == 'player' %}class="active"{% endif %}><a href="{{ path('player') }}">{{ 'menu.players'|trans }}</a></li>
-            <li {% if getControllerName() == 'ban' %}class="active"{% endif %}><a href="{{ path('ban') }}">{{ 'menu.bans'|trans }}</a></li>
+            <li class="{% if getControllerName() == 'player' %}active{% endif %}"><a href="{{ path('player') }}">{{ 'menu.players'|trans }}</a></li>
+            <li class="divider-vertical"></li>
+            <li class="{% if getControllerName() == 'ban' %}active{% endif %}"><a href="{{ path('ban') }}">{{ 'menu.bans'|trans }}</a></li>
+            <li class="divider-vertical"></li>
             <li><a href="#plugins">{{ 'menu.plugins'|trans }}</a></li>
+            <li class="divider-vertical"></li>
             <li><a href="#worlds">{{ 'menu.worlds'|trans }}</a></li>
+            <li class="divider-vertical"></li>
             <li><a href="#server">{{ 'menu.server'|trans }}</a></li>
-            <li {% if getControllerName() == 'user' %}class="active"{% endif %}><a href="{{ path('user') }}">{{ 'menu.users'|trans }}</a></li>
-            <li {% if getControllerName() == 'security' %}class="active"{% endif %}>
-              {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                <a href="{{ path('fos_user_security_logout') }}">{{ app.user.username }} - {{ 'menu.logout'|trans }}</a>
-              {% else %}
-                <a href="{{ path('fos_user_security_login') }}">{{ 'menu.login'|trans }}</a>
-              {% endif %}
-            </li>
+            <li class="divider-vertical"></li>
+            <li class="{% if getControllerName() == 'user' %}active{% endif %}"><a href="{{ path('user') }}">{{ 'menu.users'|trans }}</a></li>
+            <li class="divider-vertical"></li>
           </ul>
+		  
+          <ul class="pull-right nav">
+            <li class="divider-vertical"></li>
+            {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+              <li><a href="{{ path('user_show', { 'id': app.user.id }) }}">{{ app.user.username }}</a></li>
+              <li class="{% if getControllerName() == 'security' %}active{% endif %}" >
+                <a href="{{ path('fos_user_security_logout') }}">{{ 'menu.logout'|trans }}</a>
+              </li>
+            {% else %}
+              <li class="{% if getControllerName() == 'security' %}active{% endif %}" >
+                <a href="{{ path('fos_user_security_login') }}">{{ 'menu.login'|trans }}</a>
+              </li>
+            {% endif %}
+          </ul> 
+          
         </div><!--/.nav-collapse -->
       </div>
     </div>
