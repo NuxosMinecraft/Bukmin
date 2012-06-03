@@ -3,7 +3,7 @@
 {% block bukminpanel_body %}
   <h1>Ban list</h1>
 
-  <table class="records_list">
+  <table class="records_list table table-striped table-condensed">
       <thead>
           <tr>
               <th>Id</th>
@@ -21,14 +21,8 @@
               <td>{% if entity.expire %}{{ entity.expire|date('Y-m-d H:i:s') }}{% endif %}</td>
               <td>{{ entity.active }}</td>
               <td>
-                  <ul>
-                      <li>
-                          <a href="{{ path('ban_show', { 'id': entity.id }) }}">show</a>
-                      </li>
-                      <li>
-                          <a href="{{ path('ban_edit', { 'id': entity.id }) }}">edit</a>
-                      </li>
-                  </ul>
+                <a class="btn btn-mini btn-success" href="{{ path('ban_show', { 'id': entity.id }) }}">show</a>
+                <a class="btn btn-mini btn-warning" href="{{ path('ban_edit', { 'id': entity.id }) }}">edit</a>
               </td>
           </tr>
       {% endfor %}
