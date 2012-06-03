@@ -11,6 +11,10 @@ First, clone the repository:
     
 Configuration
 -------------
+
+Create logs and cache directories
+	cd Bukmin && mkdir app/cache app/logs
+
 Check that all is OK (php configuration):
 
     php app/check.php
